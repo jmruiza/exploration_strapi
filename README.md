@@ -27,7 +27,7 @@ For run backend in [http://localhost:1337/](http://localhost:1337/).
 
 For the first time run you must create your admin credentials.
 
-If the Strapi server is not already running, in your terminal run:
+:sweat_smile: If the Strapi server is not already running, in your terminal run:
 
 ```bash
 cd ./my-project/backend && npm run develop
