@@ -21,7 +21,7 @@
       "path": "/activities/hello",
       "handler": "activity.hello",
       "config": {
-        "policies": [is]
+        "policies": ["isMan"]
       }
     },
     {

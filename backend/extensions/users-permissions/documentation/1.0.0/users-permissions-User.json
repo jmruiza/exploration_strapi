@@ -1250,6 +1250,14 @@
                 "type": "string"
               }
             }
+          },
+          "sex": {
+            "type": "string",
+            "enum": [
+              "man",
+              "woman",
+              "person"
+            ]
           }
         }
       },
@@ -1291,6 +1299,14 @@
           },
           "role": {
             "type": "string"
+          },
+          "sex": {
+            "type": "string",
+            "enum": [
+              "man",
+              "woman",
+              "person"
+            ]
           },
           "created_by": {
             "type": "string"
