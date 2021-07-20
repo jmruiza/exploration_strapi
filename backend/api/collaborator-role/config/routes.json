@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/collaborator-roles",
+      "handler": "collaborator-role.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/collaborator-roles/count",
+      "handler": "collaborator-role.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/collaborator-roles/:id",
+      "handler": "collaborator-role.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/collaborator-roles",
+      "handler": "collaborator-role.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/collaborator-roles/:id",
+      "handler": "collaborator-role.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/collaborator-roles/:id",
+      "handler": "collaborator-role.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

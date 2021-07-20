@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Customer",
+  "info": {
+    "name": "Customer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "projects": {
+      "via": "customer",
+      "collection": "projects"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Projects",
+  "info": {
+    "name": "Project",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Name",
+      "required": true,
+      "maxLength": 120,
+      "unique": true,
+      "minLength": 20
+    },
+    "customerTittle": {
+      "type": "string",
+      "default": "CustomerName"
+    },
+    "description": {
+      "type": "text",
+      "default": "Description"
+    },
+    "collaborators": {
+      "via": "project",
+      "collection": "collaborator-role"
+    },
+    "customer": {
+      "via": "projects",
+      "model": "customer"
+    },
+    "durationHours": {
+      "type": "integer"
+    },
+    "durationMonths": {
+      "type": "integer"
+    },
+    "operationalCost": {
+      "type": "decimal"
+    },
+    "collaboratorsCost": {
+      "type": "decimal"
+    },
+    "profit": {
+      "type": "decimal"
+    },
+    "taxISR": {
+      "type": "decimal"
+    },
+    "subtotal": {
+      "type": "decimal"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "stopped_canceled",
+        "completed",
+        "in_process",
+        "paused",
+        "proposal"
+      ]
+    }
+  }
+}

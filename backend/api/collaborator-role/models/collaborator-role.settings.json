@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collaboration",
+  "info": {
+    "name": "Collaboration",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "project_manager",
+        "analist",
+        "developer",
+        "tester"
+      ]
+    },
+    "project": {
+      "via": "collaborators",
+      "model": "projects"
+    },
+    "collaborator": {
+      "via": "collaborations",
+      "model": "collaborator"
+    },
+    "activities": {
+      "via": "collaborations",
+      "collection": "activity",
+      "dominant": true
+    },
+    "profit": {
+      "type": "decimal"
+    }
+  }
+}

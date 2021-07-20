@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Collaborator",
+  "info": {
+    "name": "Collaborator",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "collaborations": {
+      "via": "collaborator",
+      "collection": "collaborator-role"
+    }
+  }
+}
