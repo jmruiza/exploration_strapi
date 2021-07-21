@@ -525,17 +525,13 @@
           },
           "title": {
             "type": "string",
-            "default": "Name",
-            "maxLength": 120,
-            "minLength": 20
+            "maxLength": 120
           },
           "customerTittle": {
-            "type": "string",
-            "default": "CustomerName"
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "default": "Description"
+            "type": "string"
           },
           "collaborators": {
             "type": "array",
@@ -605,29 +601,37 @@
               }
             }
           },
-          "durationHours": {
-            "type": "integer"
+          "durationDays": {
+            "type": "integer",
+            "default": 0
           },
           "durationMonths": {
-            "type": "integer"
+            "type": "integer",
+            "default": 0
           },
           "operationalCost": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "collaboratorsCost": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "profit": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "taxISR": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "subtotal": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "status": {
             "type": "string",
+            "default": "proposal",
             "enum": [
               "stopped_canceled",
               "completed",
@@ -635,6 +639,56 @@
               "paused",
               "proposal"
             ]
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "durationDays": {
+                  "type": "integer"
+                },
+                "costActivity": {
+                  "type": "number"
+                },
+                "activities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "activityParent": {
+                  "type": "string"
+                },
+                "collaborations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "project": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -645,17 +699,13 @@
         "properties": {
           "title": {
             "type": "string",
-            "default": "Name",
-            "maxLength": 120,
-            "minLength": 20
+            "maxLength": 120
           },
           "customerTittle": {
-            "type": "string",
-            "default": "CustomerName"
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "default": "Description"
+            "type": "string"
           },
           "collaborators": {
             "type": "array",
@@ -666,29 +716,37 @@
           "customer": {
             "type": "string"
           },
-          "durationHours": {
-            "type": "integer"
+          "durationDays": {
+            "type": "integer",
+            "default": 0
           },
           "durationMonths": {
-            "type": "integer"
+            "type": "integer",
+            "default": 0
           },
           "operationalCost": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "collaboratorsCost": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "profit": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "taxISR": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "subtotal": {
-            "type": "number"
+            "type": "number",
+            "default": 0
           },
           "status": {
             "type": "string",
+            "default": "proposal",
             "enum": [
               "stopped_canceled",
               "completed",
@@ -696,6 +754,12 @@
               "paused",
               "proposal"
             ]
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

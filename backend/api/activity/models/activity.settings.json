@@ -19,7 +19,7 @@
       "type": "string",
       "required": true
     },
-    "durationHours": {
+    "durationDays": {
       "type": "integer"
     },
     "costActivity": {
@@ -36,6 +36,10 @@
     "collaborations": {
       "via": "activities",
       "collection": "collaborator-role"
+    },
+    "project": {
+      "via": "activities",
+      "model": "projects"
     }
   }
 }

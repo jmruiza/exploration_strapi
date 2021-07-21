@@ -20,11 +20,10 @@ module.exports = {
    */
 
   async create(ctx) {
-    // TODO: Implement calculations to get the profit from collaborations
-    ctx.request.body.costActivity = 200.00
-
     let entity = await strapi.services.activity.create(ctx.request.body);
-
+    const project = await strapi.services.projects.updateProjectValues(ctx);
+    console.log(project);
+    entity.project = project;
     return sanitizeEntity(entity, { model: strapi.models.activity });
   },
 

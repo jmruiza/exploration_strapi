@@ -586,7 +586,7 @@
           "name": {
             "type": "string"
           },
-          "durationHours": {
+          "durationDays": {
             "type": "integer"
           },
           "costActivity": {
@@ -609,7 +609,7 @@
                 "name": {
                   "type": "string"
                 },
-                "durationHours": {
+                "durationDays": {
                   "type": "integer"
                 },
                 "costActivity": {
@@ -629,6 +629,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "project": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -654,7 +657,7 @@
               "name": {
                 "type": "string"
               },
-              "durationHours": {
+              "durationDays": {
                 "type": "integer"
               },
               "costActivity": {
@@ -674,6 +677,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "project": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -725,6 +731,78 @@
                 }
               }
             }
+          },
+          "project": {
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "customerTittle": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "collaborators": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "customer": {
+                "type": "string"
+              },
+              "durationDays": {
+                "type": "integer"
+              },
+              "durationMonths": {
+                "type": "integer"
+              },
+              "operationalCost": {
+                "type": "number"
+              },
+              "collaboratorsCost": {
+                "type": "number"
+              },
+              "profit": {
+                "type": "number"
+              },
+              "taxISR": {
+                "type": "number"
+              },
+              "subtotal": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "stopped_canceled",
+                  "completed",
+                  "in_process",
+                  "paused",
+                  "proposal"
+                ]
+              },
+              "activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -739,7 +817,7 @@
           "name": {
             "type": "string"
           },
-          "durationHours": {
+          "durationDays": {
             "type": "integer"
           },
           "costActivity": {
@@ -759,6 +837,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "project": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

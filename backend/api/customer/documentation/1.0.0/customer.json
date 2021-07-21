@@ -554,7 +554,7 @@
                 "customer": {
                   "type": "string"
                 },
-                "durationHours": {
+                "durationDays": {
                   "type": "integer"
                 },
                 "durationMonths": {
@@ -584,6 +584,12 @@
                     "paused",
                     "proposal"
                   ]
+                },
+                "activities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

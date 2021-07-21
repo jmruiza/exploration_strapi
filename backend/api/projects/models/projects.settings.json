@@ -14,19 +14,15 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Name",
       "required": true,
       "maxLength": 120,
-      "unique": true,
-      "minLength": 20
+      "unique": true
     },
     "customerTittle": {
-      "type": "string",
-      "default": "CustomerName"
+      "type": "string"
     },
     "description": {
-      "type": "text",
-      "default": "Description"
+      "type": "text"
     },
     "collaborators": {
       "via": "project",
@@ -36,26 +32,40 @@
       "via": "projects",
       "model": "customer"
     },
-    "durationHours": {
-      "type": "integer"
+    "durationDays": {
+      "type": "integer",
+      "private": false,
+      "default": 0
     },
     "durationMonths": {
-      "type": "integer"
+      "type": "integer",
+      "private": false,
+      "default": 0
     },
     "operationalCost": {
-      "type": "decimal"
+      "type": "decimal",
+      "private": false,
+      "default": 0
     },
     "collaboratorsCost": {
-      "type": "decimal"
+      "type": "decimal",
+      "private": false,
+      "default": 0
     },
     "profit": {
-      "type": "decimal"
+      "type": "decimal",
+      "private": false,
+      "default": 0
     },
     "taxISR": {
-      "type": "decimal"
+      "type": "decimal",
+      "private": false,
+      "default": 0
     },
     "subtotal": {
-      "type": "decimal"
+      "type": "decimal",
+      "private": false,
+      "default": 0
     },
     "status": {
       "type": "enumeration",
@@ -65,7 +75,12 @@
         "in_process",
         "paused",
         "proposal"
-      ]
+      ],
+      "default": "proposal"
+    },
+    "activities": {
+      "via": "project",
+      "collection": "activity"
     }
   }
 }
