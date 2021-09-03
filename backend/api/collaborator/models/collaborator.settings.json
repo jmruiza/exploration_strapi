@@ -21,6 +21,22 @@
     "collaborations": {
       "via": "collaborator",
       "collection": "collaborator-role"
+    },
+    "brief": {
+      "type": "richtext"
+    },
+    "profilePicture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "nickname": {
+      "type": "string"
     }
   }
 }

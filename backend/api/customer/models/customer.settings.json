@@ -18,6 +18,9 @@
     "projects": {
       "via": "customer",
       "collection": "projects"
+    },
+    "nickname": {
+      "type": "string"
     }
   }
 }

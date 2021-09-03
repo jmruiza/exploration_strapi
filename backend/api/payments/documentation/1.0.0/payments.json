@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/customers": {
+    "/payments": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the payments's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Customer"
+                    "$ref": "#/components/schemas/Payments"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Payments"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new payments record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "$ref": "#/components/schemas/Payments"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Payments"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCustomer"
+                "$ref": "#/components/schemas/NewPayments"
               }
             }
           }
         }
       }
     },
-    "/customers/count": {
+    "/payments/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of payments documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Payments"
         ],
         "parameters": []
       }
     },
-    "/customers/{id}": {
+    "/payments/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one payments record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "$ref": "#/components/schemas/Payments"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Payments"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single payments record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "$ref": "#/components/schemas/Payments"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Payments"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCustomer"
+                "$ref": "#/components/schemas/NewPayments"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single payments record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single payments based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Payments"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Customer": {
+      "Payments": {
         "required": [
           "id"
         ],
@@ -522,107 +522,137 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "description": {
             "type": "string"
           },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "customerTittle": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "collaborators": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "customer": {
-                  "type": "string"
-                },
-                "durationDays": {
-                  "type": "integer"
-                },
-                "durationMonths": {
-                  "type": "integer"
-                },
-                "operationalCost": {
-                  "type": "number"
-                },
-                "collaboratorsCost": {
-                  "type": "number"
-                },
-                "profit": {
-                  "type": "number"
-                },
-                "taxISR": {
-                  "type": "number"
-                },
-                "subtotal": {
-                  "type": "number"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "stopped_canceled",
-                    "completed",
-                    "in_process",
-                    "paused",
-                    "proposal"
-                  ]
-                },
-                "activities": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "payments": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "percent": {
+            "type": "number"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "default": "proposal",
+            "enum": [
+              "proposal",
+              "pending",
+              "purchase_order",
+              "invoiced",
+              "paid",
+              "distributed"
+            ]
+          },
+          "order": {
+            "type": "integer"
+          },
+          "project": {
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "customerTittle": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "collaborators": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "customer": {
+                "type": "string"
+              },
+              "durationDays": {
+                "type": "integer"
+              },
+              "durationMonths": {
+                "type": "integer"
+              },
+              "operationalCost": {
+                "type": "number"
+              },
+              "collaboratorsCost": {
+                "type": "number"
+              },
+              "profit": {
+                "type": "number"
+              },
+              "taxISR": {
+                "type": "number"
+              },
+              "subtotal": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "stopped_canceled",
+                  "completed",
+                  "in_process",
+                  "paused",
+                  "proposal"
+                ]
+              },
+              "activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "payments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
-          },
-          "nickname": {
-            "type": "string"
           }
         }
       },
-      "NewCustomer": {
+      "NewPayments": {
         "properties": {
-          "name": {
+          "description": {
             "type": "string"
           },
-          "projects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "percent": {
+            "type": "number"
           },
-          "nickname": {
+          "amount": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "default": "proposal",
+            "enum": [
+              "proposal",
+              "pending",
+              "purchase_order",
+              "invoiced",
+              "paid",
+              "distributed"
+            ]
+          },
+          "order": {
+            "type": "integer"
+          },
+          "project": {
             "type": "string"
           },
           "created_by": {
@@ -637,7 +667,7 @@
   },
   "tags": [
     {
-      "name": "Customer"
+      "name": "Payments"
     }
   ]
 }

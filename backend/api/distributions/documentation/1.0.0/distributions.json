@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/customers": {
+    "/distributions": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the distributions's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve distributions document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Customer"
+                    "$ref": "#/components/schemas/Distributions"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Distributions"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new distributions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve distributions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "$ref": "#/components/schemas/Distributions"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Distributions"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCustomer"
+                "$ref": "#/components/schemas/NewDistributions"
               }
             }
           }
         }
       }
     },
-    "/customers/count": {
+    "/distributions/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of distributions documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve distributions document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Distributions"
         ],
         "parameters": []
       }
     },
-    "/customers/{id}": {
+    "/distributions/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one distributions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve distributions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "$ref": "#/components/schemas/Distributions"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Distributions"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single distributions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve distributions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "$ref": "#/components/schemas/Distributions"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Distributions"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCustomer"
+                "$ref": "#/components/schemas/NewDistributions"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single distributions record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single distributions based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Customer"
+          "Distributions"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Customer": {
+      "Distributions": {
         "required": [
           "id"
         ],
@@ -522,108 +522,15 @@
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "customerTittle": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "collaborators": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "customer": {
-                  "type": "string"
-                },
-                "durationDays": {
-                  "type": "integer"
-                },
-                "durationMonths": {
-                  "type": "integer"
-                },
-                "operationalCost": {
-                  "type": "number"
-                },
-                "collaboratorsCost": {
-                  "type": "number"
-                },
-                "profit": {
-                  "type": "number"
-                },
-                "taxISR": {
-                  "type": "number"
-                },
-                "subtotal": {
-                  "type": "number"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "stopped_canceled",
-                    "completed",
-                    "in_process",
-                    "paused",
-                    "proposal"
-                  ]
-                },
-                "activities": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "payments": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "nickname": {
-            "type": "string"
+          "amount": {
+            "type": "number"
           }
         }
       },
-      "NewCustomer": {
+      "NewDistributions": {
         "properties": {
-          "name": {
-            "type": "string"
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "nickname": {
-            "type": "string"
+          "amount": {
+            "type": "number"
           },
           "created_by": {
             "type": "string"
@@ -637,7 +544,7 @@
   },
   "tags": [
     {
-      "name": "Customer"
+      "name": "Distributions"
     }
   ]
 }

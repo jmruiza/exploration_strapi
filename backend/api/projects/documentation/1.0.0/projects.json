@@ -593,6 +593,9 @@
                   "type": "string"
                 }
               },
+              "nickname": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -689,6 +692,51 @@
                 }
               }
             }
+          },
+          "payments": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "percent": {
+                  "type": "number"
+                },
+                "amount": {
+                  "type": "integer"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "proposal",
+                    "pending",
+                    "purchase_order",
+                    "invoiced",
+                    "paid",
+                    "distributed"
+                  ]
+                },
+                "order": {
+                  "type": "integer"
+                },
+                "project": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -756,6 +804,12 @@
             ]
           },
           "activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "payments": {
             "type": "array",
             "items": {
               "type": "string"

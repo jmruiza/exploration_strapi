@@ -1,3 +1,12 @@
-# Strapi application
+# Project Administrator
 
-A quick description of your strapi application
+For first time run:
+
+```bash
+npm run develop
+```
+
+![sd](./public/assets/diagram.PNG)
+
+--- 
+Powered by Strapi

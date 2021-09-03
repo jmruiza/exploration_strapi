@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "Projects",
   "info": {
-    "name": "Project",
+    "name": "Projects",
     "description": ""
   },
   "options": {
@@ -81,6 +81,10 @@
     "activities": {
       "via": "project",
       "collection": "activity"
+    },
+    "payments": {
+      "collection": "payments",
+      "via": "project"
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "distributions",
+  "info": {
+    "name": "Distributions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "decimal"
+    }
+  }
+}

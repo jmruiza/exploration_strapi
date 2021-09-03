@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "name": "Payments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "percent": {
+      "type": "decimal"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "proposal",
+        "pending",
+        "purchase_order",
+        "invoiced",
+        "paid",
+        "distributed"
+      ],
+      "default": "proposal"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "project": {
+      "via": "payments",
+      "model": "projects"
+    }
+  }
+}

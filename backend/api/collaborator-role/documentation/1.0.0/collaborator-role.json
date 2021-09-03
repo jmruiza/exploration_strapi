@@ -608,6 +608,12 @@
                   "type": "string"
                 }
               },
+              "payments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -635,6 +641,15 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "brief": {
+                "type": "string"
+              },
+              "profilePicture": {
+                "type": "string"
+              },
+              "nickname": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
